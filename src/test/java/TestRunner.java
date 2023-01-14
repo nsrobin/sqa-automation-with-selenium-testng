@@ -10,14 +10,15 @@ import java.util.List;
 public class TestRunner extends Setup {
     @Test(priority = 1,description = "User can login successfully",testName = "TC01")
     public void doLogin(){
-        driver.get("https://erp.madina.co/");
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         LoginPage loginPage=new LoginPage(driver);
-        loginPage.doLogin("parvej@madina.co","madina@123");
+        loginPage.doLogin("Admin","admin123");
 
-        List<WebElement> txtLabel= driver.findElements(By.tagName("b"));
-        String welcomeMessage_Actual= txtLabel.get(0).getText();
-        String welcomeMessage_Expected="Welcome to Madina ERP";
-        Assert.assertEquals(welcomeMessage_Actual,welcomeMessage_Expected);
+        Thread.sleep(2000);
+        List<WebElement> sidebarMenu= driver.findElements(By.className("betternet-wrapper"));
+        sidebarMenu.get(1).click();
+        driver.findElement(By.partialLinkText("Admin")).click();
+        Thread.sleep(5000);
     }
     @Test(priority = 2)
     public void clickOnProcurementMenu() throws InterruptedException {
