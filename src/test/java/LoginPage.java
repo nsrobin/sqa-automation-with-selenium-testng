@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class LoginPage {
-    @FindBy(className = "login_input__2-vJx")
+    @FindBy(className = "oxd-input oxd-input--active")
     List<WebElement> txtCreds;
     @FindBy(css = "[type=submit]")
     WebElement btnSubmit;
