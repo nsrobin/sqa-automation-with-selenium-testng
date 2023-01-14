@@ -38,4 +38,13 @@ public class TestRunner extends Setup {
         Thread.sleep(5000);
 
     }
+    @Test(priority = 4, testName = "TC04")
+    public void pim() throws InterruptedException {
+        Thread.sleep(2000);
+        List<WebElement> sidebarMenu= driver.findElements(By.className("oxd-main-menu-search"));
+        sidebarMenu.get(1).click();
+        driver.findElement(By.partialLinkText("Search")).click();
+        Thread.sleep(5000);
+
+    }
 }
