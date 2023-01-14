@@ -52,6 +52,7 @@ public class TestRunner extends Setup {
         List<WebElement> input = driver.findElements(By.className("oxd-input"));
         input.get(1).sendKeys("Nazmus");
         input.get(2).sendKeys("Shakib");
+        input.get(3).sendKeys("Robin");
 
         Thread.sleep(2000);
 
