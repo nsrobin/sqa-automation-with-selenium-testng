@@ -5,13 +5,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class AdminPage {
+public class PimPage {
     @FindBy(className = "oxd-text oxd-text--h5 oxd-table-filter-title")
 
-    public AdminPage(WebDriver driver){
+    public PimPage(WebDriver driver){
         PageFactory.initElements(driver,this);
     }
-    public void admin(){
+    public void pim(){
         btnSubmit.click();
     }
 
