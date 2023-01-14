@@ -30,7 +30,6 @@ public class TestRunner extends Setup {
         String userName_Actual= txtLabel.get(0).getText();
         String userName_Expected="System Users";
         Assert.assertEquals(userName_Actual,userName_Expected);
-
     }
     @Test(priority = 3, testName = "TC03")
     public void pim() throws InterruptedException {
@@ -66,7 +65,6 @@ public class TestRunner extends Setup {
 
         List<WebElement> submit = driver.findElements(By.className("oxd-button"));
         submit.get(1).click();
-
     }
     @Test(priority = 4, testName = "TC04")
     public void pim() throws InterruptedException {
@@ -79,6 +77,5 @@ public class TestRunner extends Setup {
         driver.findElement(By.tagName("input")).sendKeys("shakib");
         List<WebElement> Searchbutton = driver.findElements(By.className("type=submit"));
         Searchbutton.get(0).click();
-
     }
 }
