@@ -41,16 +41,30 @@ public class TestRunner extends Setup {
         Thread.sleep(5000);
 
         // Add User
-        driver.findElement(By.className("oxd-input oxd-input--active orangehrm-firstname")).sendKeys("Nazmus");
-        driver.findElement(By.className("oxd-input oxd-input--active orangehrm-lastname")).sendKeys("Shakib");
-        driver.findElement(By.tagName("span")).click();
-        driver.findElement(By.tagName("input")).sendKeys("shakib");
-        List<WebElement> password= driver.findElements(By.className("type=password"));
-        password.get(0).click();
-        List<WebElement> Confirmpassword= driver.findElements(By.className("type=password"));
-        Confirmpassword.get(1).click();
-        List<WebElement> Save= driver.findElements(By.className("type=submit"));
-        Save.get(0).click();
+        List<WebElement> menus = driver.findElements(By.className("oxd-main-menu-item--name"));
+        menus.get(1).click();
+
+        List<WebElement> add_btn = driver.findElements(By.className("oxd-button"));
+        add_btn.get(2).click();
+
+        Thread.sleep(2000);
+
+        List<WebElement> input = driver.findElements(By.className("oxd-input"));
+        input.get(1).sendKeys("Nazmus");
+        input.get(2).sendKeys("Shakib");
+
+        Thread.sleep(2000);
+
+        List<WebElement> radio_btn = driver.findElements(By.className("oxd-switch-wrapper"));
+        radio_btn.get(0).click();
+
+        List<WebElement> input_ext = driver.findElements(By.className("oxd-input"));
+        input.get(5).sendKeys("shakib");
+        input.get(6).sendKeys("12345678");
+        input.get(7).sendKeys("12345678");
+
+        List<WebElement> submit = driver.findElements(By.className("oxd-button"));
+        submit.get(1).click();
 
     }
     @Test(priority = 4, testName = "TC04")
